@@ -1,0 +1,54 @@
+#This is stone paper secssiosor game
+import random
+print("Welcome to stone paper scissors game")
+print("•"*10,end="  ")
+Cch=["Stone","Paper","Scissors"]    #list for computer
+while True:
+	yoursin=0
+	computerin=0
+	for i in range(1,6):                 #Five round game
+		print("Round",i,"Start :-")
+		print("1:Stone,2:Paper,3:Scissors")
+		ych=(input("Select any one:-"))
+		print("•"*10) #choose any option
+		if ych=="1":
+			print("You select :- Stone")
+		elif ych=="2":
+			print("You select :- Paper")
+		elif ych=="3":
+			print("You select :- Scissors")
+		else:
+			print("invalid")
+			break
+		comch=random.choice(Cch)
+		print("Computer select :-",comch)  #Here computer choose any option
+		if ych==comch:
+			yoursin +=1
+			computerin +=1
+			print("This round is draw")
+			print("◖⚆ᴥ⚆◗")
+		elif (ych=="Stone" and comch=="Scissors") or (ych=="Paper" and comch=="Stone") or(ych=="Scissors"and comch=="Paper"):
+			yoursin +=1
+			print("You Won !")
+			print("(◔‿◔)")
+		else:
+			computerin +=1
+			print("Computer win")
+			print("༎ຶ‿༎ຶ")
+	if yoursin>computerin:
+		print("You win game")
+		print("(✷‿✷)")
+		print("Your total score",yoursin,"Computer score",computerin)   #Total Scoreing
+	elif yoursin<computerin:
+		print("Computer win game")
+		print(".·´¯`(>▂<)´¯`·.")
+		print("Your total score",yoursin,"Computer score",computerin)
+	replay=input("To play again type y or quit type q :-")               #To play play game again or not
+	if replay=="y":
+		continue
+	else:
+		print("Thankyou for playing")
+		print('^_^')
+		break
+		
+		
